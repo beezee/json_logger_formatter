@@ -7,7 +7,7 @@ module JsonLoggerFormatter
     def self.call(severity, time, progname, msg)
       line = {severity: severity, time: time, msg: msg}
       line[:progname] = progname if progname
-      "#{line}\n"
+      "#{line.to_json}\n"
     end
   end
 end
